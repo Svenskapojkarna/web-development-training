@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jitsi PoC</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://meet.jit.si/external_api.js"></script>
+        <script>
+            $(document).ready(function(){
+                var domain = "meet.jit.si"
+                var configs = {
+                    disableInviteFunctions: true
+                }
+                var options = {
+                    roomName: "JitsiMeetPoCgergerge",
+                    width: 700,
+                    height: 700,
+                    parentNode: document.querySelector("#meet"),
+                    configOverride: configs
+                }
+                var api = new JitsiMeetExternalAPI(domain, options);
+                api.executeCommand("toggleLobby", false);
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Blank web page for Jitsi PoC</h1>
+        <div id="meet"></div>
+    </body>
+</html>
